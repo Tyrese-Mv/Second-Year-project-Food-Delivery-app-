@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Application_Development_Project_2_Restuarant_.Models.OrderDetail>
+
+@{
+    ViewBag.Title = "Invoices";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Back To Index", "Index", "Meal")
+</p>
+<table id="table table-striped table-condensed" class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitPriceSale)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuantitySale)
+        </th>
+        <th>
+            Item       @*@Html.DisplayNameFor(model => model.Item.Name)*@
+        </th>
+        <th>
+            Customer Name @*@Html.DisplayNameFor(model => model.Order.Description)*@
+        </th>
+
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitPriceSale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QuantitySale)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Order.Description)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+<link href="//cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="//cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#Invoice").DataTable()
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+    </script>
+}
+

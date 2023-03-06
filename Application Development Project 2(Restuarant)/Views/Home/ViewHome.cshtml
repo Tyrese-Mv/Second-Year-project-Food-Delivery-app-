@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Application_Development_Project_2_Restuarant_.Models.Item>
+
+@{
+    ViewBag.Title = "Home";
+}
+
+<h2>ViewHome</h2>
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="@Url.Content(item.ImagePath)" class="card-img-top" style="height:200px;width:288px;">
+                    <div class="card-body">
+                        <p>@item.Price</p>
+                        <a href="@Url.Action("AddtoCart", "ShoppingCart",  new { id = item.ItmId })"><i class="fas fa-shopping-cart"></i> </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        }
+    </div>
+</div>

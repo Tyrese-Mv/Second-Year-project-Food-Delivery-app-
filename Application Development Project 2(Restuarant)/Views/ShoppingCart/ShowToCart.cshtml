@@ -1,0 +1,101 @@
+﻿@model Application_Development_Project_2_Restuarant_.Models.Cart
+
+<h2>ShowToCart</h2>
+@if (Model != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Sum</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                double total = Convert.ToDouble(item.Shopping_Product.Price * item.Shopping_Quantity);
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Shopping_Product.Name);
+                    </td>
+                    <td>
+                        <img src="@Url.Content(item.Shopping_Product.ImagePath)" style="width:100px; height:100px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.Shopping_Product.Price)
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("Update_Quantity_Cart", "ShoppingCart"))
+                        {
+                            <input type="hidden" value="@item.Shopping_Product.ItmId" name="Item_Id" />
+                            <input type="number" value="@item.Shopping_Quantity" name="Quantity" />
+                            <input type="submit" value="Update Quantity" />
+
+                        }
+                    </td>
+
+
+                    <td>
+                        Total: @total
+                    </td>
+                    <td>
+                        <a href="@Url.Action("RemoveCart", "ShoppingCart", new { id = item.Shopping_Product.ItmId } )">Remove</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td colspan="4" style="text-align:center">
+                    @using (Html.BeginForm("CheckOut", "ShoppingCart", FormMethod.Post))
+                    {
+                        <table style="border-collapse:separate; border-spacing:5px;">
+                            <tr>
+                                <td>Enter Your Address</td>
+                                <td>
+                                    <input type="text" name="CustomerCode" required />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>Your FullNames</td>
+                                <td>
+                                    <input type="text" name="Description" required />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <a href="@Url.Action("Create", "Customer")">Register</a>
+                                </td>
+                                <td>
+                                    <input type="submit" value="Checkout" class="btn btn-success" />
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    }
+
+
+                </td>
+            </tr>
+        </tfoot>
+
+        <tfoot>
+            <tr>
+                <td colspan="5" ; align="right">Total price:R @Model.Total()</td>
+            </tr>
+
+
+        </tfoot>
+    </table>
+
+}
+
+

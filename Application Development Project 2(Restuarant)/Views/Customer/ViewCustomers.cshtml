@@ -1,0 +1,53 @@
+﻿
+@model IEnumerable<Application_Development_Project_2_Restuarant_.Models.Customer>
+
+@{
+    ViewBag.Title = "ViewCustomers";
+}
+
+<h2>ViewCustomers</h2>
+
+<p>
+    @Html.ActionLink("Back To Index", "Index", "Meal")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CusName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusPassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CusPhone)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusPassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CusPhone)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.CusId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CusId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.CusId })
+            </td>
+        </tr>
+    }
+
+</table>

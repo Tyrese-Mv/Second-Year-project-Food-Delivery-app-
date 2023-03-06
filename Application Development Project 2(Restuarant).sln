@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application Development Project 2(Restuarant)", "Application Development Project 2(Restuarant)\Application Development Project 2(Restuarant).csproj", "{5590B5B1-F069-4CF3-AB1D-9456EC8348B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application Development Project 2(Restuarant).Tests", "Application Development Project 2(Restuarant).Tests\Application Development Project 2(Restuarant).Tests.csproj", "{04F60022-33EF-4590-8747-8F55087BC0C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5590B5B1-F069-4CF3-AB1D-9456EC8348B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5590B5B1-F069-4CF3-AB1D-9456EC8348B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5590B5B1-F069-4CF3-AB1D-9456EC8348B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5590B5B1-F069-4CF3-AB1D-9456EC8348B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F60022-33EF-4590-8747-8F55087BC0C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F60022-33EF-4590-8747-8F55087BC0C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F60022-33EF-4590-8747-8F55087BC0C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F60022-33EF-4590-8747-8F55087BC0C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B3F9B0E-DEEB-449D-AF04-7015A546390D}
+	EndGlobalSection
+EndGlobal

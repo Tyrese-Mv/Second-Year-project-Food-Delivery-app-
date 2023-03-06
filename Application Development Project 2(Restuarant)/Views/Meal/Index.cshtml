@@ -1,0 +1,49 @@
+﻿@model Application_Development_Project_2_Restuarant_.Models.Item
+
+@{
+    ViewBag.Title = "Index";
+}
+<ul class="nav nav-tabs">
+    <li><a data-toggle="tab" href="#firstTab"><i class="fas fa-list"></i></a></li>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <li class="active"><a data-toggle="tab" href="#secondTab"><i class="fas fa-plus"></i></a></li>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+</ul>
+<div class="tab-content">
+    <div id="firstTab" class="tab-pane fade in">@Html.Action("ViewAll")</div>
+    <div id="secondTab" class="tab-pane fade in active">@Html.Action("AddOrEdit")</div>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div id="thirdTab" class="tab-pane fade in active">@Html.ActionLink("Order Details", "Index", "OrderDetails")</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div id="thirdTab" class="tab-pane fade in active">@Html.ActionLink("Customers", "ViewCustomers", "Customer")</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div id="thirdTab" class="tab-pane fade in active">@Html.ActionLink("Drivers", "Index", "Driver")</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div id="thirdTab" class="tab-pane fade in active">@Html.ActionLink("Administators", "Index", "Login")</div>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <div id="thirdTab" class="tab-pane fade in active">@Html.ActionLink("Orders", "Index", "Order")</div>
+
+
+
+</div>
+@*<div> @Html.ActionLink("Register", "Signup")</div>*@
+
+<link href="//cdn.datatables.net/1.11.1/css/jquery.dataTables.min.css" rel="stylesheet" />
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="//cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        function activatejQueryTable() {
+            $("#mealTable").DataTable()
+        }
+
+        $(function () {
+            activatejQueryTable();
+        });
+    </script>
+}

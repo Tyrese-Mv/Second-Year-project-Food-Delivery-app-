@@ -1,0 +1,57 @@
+﻿
+@model IEnumerable<Application_Development_Project_2_Restuarant_.Models.Driver>
+
+@{
+    ViewBag.Title = "Drivers";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Add New Driver", "Signup", "Driver")
+</p>
+<p>
+    @Html.ActionLink("Back To Index", "Index", "Meal")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DrivPassword)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DrivPassword)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.DivId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.DivId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.DivId })
+            </td>
+        </tr>
+    }
+
+</table>
